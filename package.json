@@ -1,0 +1,51 @@
+{
+  "name": "pathgae",
+  "description": "Small library to create post-build paths that preserve directory structure",
+  "version": "0.1.0",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/qrac/pathgae",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/qrac/pathgae"
+  },
+  "bugs": {
+    "url": "https://github.com/qrac/pathgae/issues"
+  },
+  "keywords": [
+    "change",
+    "replace",
+    "path",
+    "pathgae"
+  ],
+  "author": {
+    "name": "Qrac",
+    "url": "https://qrac.jp"
+  },
+  "organization": {
+    "name": "QRANOKO",
+    "url": "https://qranoko.jp"
+  },
+  "scripts": {
+    "build": "npm run build:ts && npm run build:tsc",
+    "build:ts": "esbuild ./src/index.ts --outfile=./dist/index.js",
+    "build:tsc": "tsc",
+    "test": "vitest run",
+    "test:dev": "vitest watch",
+    "prepublishOnly": "npm run clean && npm run build",
+    "clean": "trash ./dist"
+  },
+  "prettier": {
+    "semi": false
+  },
+  "devDependencies": {
+    "esbuild": "^0.14.50",
+    "typescript": "^4.7.4",
+    "vitest": "^0.19.1"
+  }
+}
